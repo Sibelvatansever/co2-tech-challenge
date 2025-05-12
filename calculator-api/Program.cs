@@ -89,3 +89,5 @@ static async Task<List<EmissionDto>?> GetEmissionsAsync(HttpClient client, long 
         return null;
     }
 }
+
+app.Run("http://0.0.0.0:8080");

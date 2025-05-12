@@ -1,0 +1,24 @@
+services:
+  calculator-api:
+    build:
+      context: ./calculator-api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - measurements-api
+      - emissions-api
+
+  measurements-api:
+    build:
+      context: ./measurements-api/src/TechChallenge.Measurements.Api
+      dockerfile: Dockerfile
+    ports:
+      - "5042:80"
+
+  emissions-api:
+    build:
+      context: ./emissions-api/src/TechChallenge.Emissions.Api
+      dockerfile: Dockerfile
+    ports:
+      - "5286:80"
