@@ -77,4 +77,4 @@ app.MapGet(
     .Produces(StatusCodes.Status500InternalServerError)
     .WithOpenApi();
 
-app.Run();
+app.Run("http://0.0.0.0:80");
